@@ -1,7 +1,0 @@
-title: Hannes Meyer Archive
-baseurl: ""
-url: ""
-markdown: kramdown
-exclude:
-  - Gemfile
-  - Gemfile.lock
