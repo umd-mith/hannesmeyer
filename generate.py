@@ -10,8 +10,8 @@ import hashlib
 from string import punctuation
 from iiif_prezi.factory import ManifestFactory
 
-data_dir = "./Hannes Meyer Images New Org"
-hostname = "http://localhost:4000"
+data_dir = "./box-data"
+hostname = "http://ec2-52-90-220-157.compute-1.amazonaws.com"
 
 def id(path):
     m = hashlib.md5()
@@ -84,7 +84,7 @@ def main():
     for row in csv.reader(open("data.csv")):
 
         # only interested in images
-        if not re.match('.*.jpg', row[4], re.IGNORECASE):
+        if row[4].startswith('.') or not row[4].lower().endswith('.jpg'):
             continue
 
         # unpack the metadata
