@@ -98,6 +98,9 @@ def main():
         item_id = slugify(title)
 
         image_path = os.path.join(data_dir, *row[0:5])
+        if not os.path.isfile(image_path):
+            continue
+
         image_info = generate_tiles(image_path)
         if not image_info:
             break
