@@ -1,3 +1,4 @@
 manifests
 images/tiles
 box-data
+.venv
